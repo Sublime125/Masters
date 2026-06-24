@@ -1,3 +1,14 @@
+// MODE SWITCH
+const modeToggle = document.getElementById('modeToggle');
+const modeLabelNormal = document.getElementById('modeLabelNormal');
+const modeLabelSpec = document.getElementById('modeLabelSpec');
+
+modeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('spec-mode', modeToggle.checked);
+    modeLabelNormal.classList.toggle('mode-label--active', !modeToggle.checked);
+    modeLabelSpec.classList.toggle('mode-label--active', modeToggle.checked);
+});
+
 // NAV
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');

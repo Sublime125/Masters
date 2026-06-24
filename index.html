@@ -22,6 +22,14 @@
     <div class="nav-inner">
         <div class="logo">SECURITY.PRO</div>
         <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+        <div class="mode-switch" id="modeSwitch">
+            <span class="mode-label mode-label--active" id="modeLabelNormal">Обычный</span>
+            <label class="toggle">
+                <input type="checkbox" id="modeToggle">
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label" id="modeLabelSpec">Специалист</span>
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#hero">Главная</a></li>
             <li><a href="#what">Кто это</a></li>
@@ -30,6 +38,7 @@
             <li><a href="#career">Карьера</a></li>
             <li><a href="#day">День</a></li>
             <li><a href="#importance">Важность</a></li>
+            <li><a href="#tools">Средства</a></li>
             <li><a href="#quiz">Тест</a></li>
         </ul>
     </div>
@@ -52,7 +61,38 @@
         <div class="orbit orbit--1"></div>
         <div class="orbit orbit--2"></div>
         <div class="orbit orbit--3"></div>
-        <div class="hero-shield">🛡️</div>
+        <div class="hero-admin">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Monitor -->
+                <rect x="30" y="40" width="140" height="100" rx="8" stroke="currentColor" stroke-width="3" fill="rgba(155,89,182,0.08)"/>
+                <rect x="42" y="52" width="116" height="70" rx="4" fill="rgba(155,89,182,0.15)"/>
+                <!-- Screen content - terminal -->
+                <rect x="50" y="60" width="80" height="6" rx="2" fill="rgba(195,155,211,0.5)"/>
+                <rect x="50" y="72" width="60" height="6" rx="2" fill="rgba(195,155,211,0.3)"/>
+                <rect x="50" y="84" width="90" height="6" rx="2" fill="rgba(195,155,211,0.4)"/>
+                <rect x="50" y="96" width="45" height="6" rx="2" fill="rgba(195,155,211,0.3)"/>
+                <rect x="50" y="108" width="70" height="6" rx="2" fill="rgba(0,200,83,0.5)"/>
+                <!-- Monitor stand -->
+                <rect x="85" y="140" width="30" height="12" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="70" y="152" width="60" height="6" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                <!-- Person -->
+                <circle cx="100" cy="175" r="12" fill="rgba(155,89,182,0.3)" stroke="currentColor" stroke-width="2.5"/>
+                <!-- Head -->
+                <circle cx="100" cy="170" r="8" fill="rgba(155,89,182,0.2)" stroke="currentColor" stroke-width="2"/>
+                <!-- Shield icon small -->
+                <path d="M100 55 L115 62 L115 75 C115 85 108 92 100 95 C92 92 85 85 85 75 L85 62 Z" stroke="rgba(0,200,83,0.7)" stroke-width="1.5" fill="rgba(0,200,83,0.1)"/>
+                <path d="M94 75 L98 79 L107 68" stroke="rgba(0,200,83,0.9)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <!-- Gears -->
+                <circle cx="55" cy="180" r="8" stroke="rgba(155,89,182,0.5)" stroke-width="1.5" fill="none"/>
+                <circle cx="55" cy="180" r="3" fill="rgba(155,89,182,0.4)"/>
+                <circle cx="145" cy="180" r="8" stroke="rgba(155,89,182,0.5)" stroke-width="1.5" fill="none"/>
+                <circle cx="145" cy="180" r="3" fill="rgba(155,89,182,0.4)"/>
+                <!-- WiFi signal -->
+                <path d="M140 50 Q150 40 160 50" stroke="rgba(195,155,211,0.5)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M143 54 Q150 46 157 54" stroke="rgba(195,155,211,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="150" cy="58" r="2" fill="rgba(195,155,211,0.6)"/>
+            </svg>
+        </div>
     </div>
 </section>
 
@@ -106,27 +146,75 @@
         <div class="tasks-grid">
             <div class="glass card-task fi">
                 <div class="task-num">01</div>
-                <div><h4>Анализ угроз</h4><p>Изучает объект, выявляет уязвимости: слабые точки периметра, зоны слепых камер, риски несанкционированного доступа.</p></div>
+                <div>
+                    <h4>Анализ угроз</h4>
+                    <p>Изучает объект, выявляет уязвимости: слабые точки периметра, зоны слепых камер, риски несанкционированного доступа.</p>
+                    <div class="spec-only spec-info">
+                        <span class="spec-key">Методология:</span> <span class="spec-val">STRIDE, DREAD, NIST SP 800-30</span><br>
+                        <span class="spec-key">Инструменты:</span> <span class="spec-val">Nessus, OpenVAS, Nmap</span><br>
+                        <span class="spec-key">Результат:</span> <span class="spec-val"> threat-model.json, coverage-map.pdf</span>
+                    </div>
+                </div>
             </div>
             <div class="glass card-task fi">
                 <div class="task-num">02</div>
-                <div><h4>Проектирование системы</h4><p>Создаёт схему размещения камер, датчиков, контроллеров. Рассчитывает покрытие и отказоустойчивость.</p></div>
+                <div>
+                    <h4>Проектирование системы</h4>
+                    <p>Создаёт схему размещения камер, датчиков, контроллеров. Рассчитывает покрытие и отказоустойчивость.</p>
+                    <div class="spec-only spec-info">
+                        <span class="spec-key">CAD:</span> <span class="spec-val">AutoCAD, Visio, draw.io</span><br>
+                        <span class="spec-key">Расчёт:</span> <span class="spec-val">IP-адресация, VLAN, PoE-бюджет</span><br>
+                        <span class="spec-key">Нормативы:</span> <span class="spec-val">ГОСТ 33861-2016, СП 152.13130</span>
+                    </div>
+                </div>
             </div>
             <div class="glass card-task fi">
                 <div class="task-num">03</div>
-                <div><h4>Внедрение и настройка</h4><p>Монтирует оборудование, настраивает ПО, интегрирует подсистемы (СКУД + видео + пожарная) в единый комплекс.</p></div>
+                <div>
+                    <h4>Внедрение и настройка</h4>
+                    <p>Монтирует оборудование, настраивает ПО, интегрирует подсистемы (СКУД + видео + пожарная) в единый комплекс.</p>
+                    <div class="spec-only spec-info">
+                        <span class="spec-key">Протоколы:</span> <span class="spec-val">ONVIF S/T, Modbus, BACnet</span><br>
+                        <span class="spec-key">Интеграция:</span> <span class="spec-val">REST API, MQTT, WebSocket</span><br>
+                        <span class="spec-key">Тестирование:</span> <span class="spec-val">stress-test, failover, latency &lt;100ms</span>
+                    </div>
+                </div>
             </div>
             <div class="glass card-task fi">
                 <div class="task-num">04</div>
-                <div><h4>Администрирование</h4><p>Управляет пользователями, правами доступа, расписаниями. Обновляет прошивки и ПО.</p></div>
+                <div>
+                    <h4>Администрирование</h4>
+                    <p>Управляет пользователями, правами доступа, расписаниями. Обновляет прошивки и ПО.</p>
+                    <div class="spec-only spec-info">
+                        <span class="spec-key">Управление:</span> <span class="spec-val">LDAP/AD, RBAC, ABAC</span><br>
+                        <span class="spec-key">Мониторинг:</span> <span class="spec-val">SNMP v3, Syslog, SIEM</span><br>
+                        <span class="spec-key">Обновления:</span> <span class="spec-val">OTA, cron-расписание, rollback</span>
+                    </div>
+                </div>
             </div>
             <div class="glass card-task fi">
                 <div class="task-num">05</div>
-                <div><h4>Мониторинг и реагирование</h4><p>Наблюдает за системой в реальном времени, обрабатывает тревоги, координирует действия с охраной.</p></div>
+                <div>
+                    <h4>Мониторинг и реагирование</h4>
+                    <p>Наблюдает за системой в реальном времени, обрабатывает тревоги, координирует действия с охраной.</p>
+                    <div class="spec-only spec-info">
+                        <span class="spec-key">Dashboards:</span> <span class="spec-val">Grafana, Zabbix, PRTG</span><br>
+                        <span class="spec-key">Оповещения:</span> <span class="spec-val">Telegram Bot, SMS API, PagerDuty</span><br>
+                        <span class="spec-key">SLA:</span> <span class="spec-val">MTTD &lt;30s, MTTR &lt;15min</span>
+                    </div>
+                </div>
             </div>
             <div class="glass card-task fi">
                 <div class="task-num">06</div>
-                <div><h4>Техобслуживание</h4><p>Проводит регулярные проверки, заменяет оборудование, модернизирует устаревшие компоненты.</p></div>
+                <div>
+                    <h4>Техобслуживание</h4>
+                    <p>Проводит регулярные проверки, заменяет оборудование, модернизирует устаревшие компоненты.</p>
+                    <div class="spec-only spec-info">
+                        <span class="spec-key">План:</span> <span class="spec-val"> quarterly PM, annual audit</span><br>
+                        <span class="spec-key">Запчасти:</span> <span class="spec-val">hot-spare, N+1 redundancy</span><br>
+                        <span class="spec-key">Документы:</span> <span class="spec-val">act-приёмки, passport оборудования</span>
+                    </div>
+                </div>
             </div>
             <div class="glass card-task fi">
                 <div class="task-num">07</div>
@@ -158,6 +246,12 @@
                     <li><span class="dot-skill"></span>Работа с SQL и базами данных для аналитики</li>
                     <li><span class="dot-skill"></span>Linux / Windows Server администрирование</li>
                 </ul>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">Стек:</span> <span class="spec-val">Python, Bash, PowerShell, SQL</span><br>
+                    <span class="spec-key">Протоколы:</span> <span class="spec-val">ONVIF, Modbus, BACnet, MQTT</span><br>
+                    <span class="spec-key">Оборудование:</span> <span class="spec-val">PoE-коммутаторы, NVR, DVR, HVR</span><br>
+                    <span class="spec-key">Сертификации:</span> <span class="spec-val">CCNA, HCIA, OSDP Certified</span>
+                </div>
             </div>
             <div class="glass panel">
                 <h3>💡 Soft Skills</h3>
@@ -235,31 +329,49 @@
                 <div class="tl-time">08:30</div>
                 <h4>Проверка системы</h4>
                 <p>Утро начинается с мониторинга: проверка статуса всех камер, контроллеров СКУД, датчиков. Просмотр журнала ночных событий.</p>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">Таск:</span> <span class="spec-val">check-all-nodes.sh → 247/247 OK, last-night: 3 motion alerts (false positive)</span>
+                </div>
             </div>
             <div class="glass tl-card">
                 <div class="tl-time">09:30</div>
                 <h4>Совещание с заказчиком</h4>
                 <p>Обсуждение текущих задач, согласование расширения системы на новом корпусе, обзор отчётов за неделю.</p>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">SPRINT:</span> <span class="spec-val">Расширение СКУД на 48 точек, интеграция с 1С:ERP v12</span>
+                </div>
             </div>
             <div class="glass tl-card">
                 <div class="tl-time">11:00</div>
                 <h4>Монтаж на объекте</h4>
                 <p>Выезд на строящийся объект: контроль размещения камер, проверка прокладки кабелей, настройка серверной.</p>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">ОБЪЕКТ:</span> <span class="spec-val">Корпус B, 2F: 12x IPC-HFW5842T-ASE, 2x DS-2DE4A425IWG, Cat6A S/FTP</span>
+                </div>
             </div>
             <div class="glass tl-card">
                 <div class="tl-time">14:00</div>
                 <h4>Настройка ПО</h4>
                 <p>Возврат в офис: настройка VMS-платформы, нарезка масок для аналитики, настройка уведомлений для мобильного приложения.</p>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">VMS:</span> <span class="spec-val">XProtect Corporate v12.8 → rules: line-crossing + loitering + object-left</span>
+                </div>
             </div>
             <div class="glass tl-card">
                 <div class="tl-time">16:30</div>
                 <h4>Реагирование на инцидент</h4>
                 <p>Поступает сигнал тревоги с одного из объектов. Анализ видео, уточнение обстоятельств, координация с охраной.</p>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">INCIDENT:</span> <span class="spec-val">ALM-2847, Zone-12, PIR-04 → video clip: 16:32:14-16:32:47 → false alarm (cat)</span>
+                </div>
             </div>
             <div class="glass tl-card">
                 <div class="tl-time">18:00</div>
                 <h4>Документация</h4>
                 <p>Заполнение журнала работ, обновление схем объекта, план задач на завтра. Закрытие смены.</p>
+                <div class="spec-only spec-info">
+                    <span class="spec-key">LOG:</span> <span class="spec-val">git commit -m "day-2026-06-24: 12 cams installed, VMS configured, 1 false alarm"</span>
+                </div>
             </div>
         </div>
     </div>
@@ -308,7 +420,152 @@
     </div>
 </section>
 
-<!-- 8. ТЕСТ -->
+<!-- 8. СРЕДСТВА БЕЗОПАСНОСТИ -->
+<section id="tools">
+    <div class="container">
+        <div class="fi">
+            <span class="section-label">Инструменты</span>
+            <h2 class="section-title">Средства безопасности <span class="accent">которые администрирует специалист</span></h2>
+            <p class="section-desc">Оборудование и программное обеспечение, с которым работает специалист каждый день</p>
+        </div>
+
+        <div class="tools-grid fi">
+            <!-- Видеонаблюдение -->
+            <div class="glass tool-card">
+                <div class="tool-header">
+                    <div class="tool-ico">📹</div>
+                    <h4>IP-видеонаблюдение</h4>
+                </div>
+                <p class="tool-desc">Системы видеонаблюдения с ИИ-аналитикой</p>
+                <div class="tool-specs">
+                    <div class="spec"><span class="spec-label">Камеры:</span> Hikvision DS-2CD2T87G2, Axis P3265-LV, Dahua IPC-HFW5842T</div>
+                    <div class="spec"><span class="spec-label">Разрешение:</span> 4K / 8MP, 30 кадров/сек</div>
+                    <div class="spec"><span class="spec-label">Протоколы:</span> ONVIF, RTSP, HLS</div>
+                    <div class="spec"><span class="spec-label">VMS:</span> Milestone XProtect, Genetec Security Center</div>
+                    <div class="spec"><span class="spec-label">Аналитика:</span> Детекция лиц, распознавание номеров, подсчёт людей, детекция аномалий</div>
+                </div>
+                <div class="tool-tags">
+                    <span class="tool-tag">PoE</span>
+                    <span class="tool-tag">H.265+</span>
+                    <span class="tool-tag">Night Vision</span>
+                    <span class="tool-tag">WDR</span>
+                </div>
+            </div>
+
+            <!-- СКУД -->
+            <div class="glass tool-card">
+                <div class="tool-header">
+                    <div class="tool-ico">🔐</div>
+                    <h4>СКУД</h4>
+                </div>
+                <p class="tool-desc">Системы контроля и управления доступом</p>
+                <div class="tool-specs">
+                    <div class="spec"><span class="spec-label">Контроллеры:</span> ИНТРСОЕДИНЕНИЕ, Ajax, VizIT</div>
+                    <div class="spec"><span class="spec-label">Считыватели:</span> RFID 125kHz / 13.56MHz, RFID+PIN, биометрия</div>
+                    <div class="spec"><span class="spec-label">Идентификация:</span> Смарт-карты MIFARE, отпечатки пальца, Face ID</div>
+                    <div class="spec"><span class="spec-label">Турникеты:</span> Speedgate, Tripod, Full-height</div>
+                    <div class="spec"><span class="spec-label">Интеграция:</span> API с ERP, 1С, Active Directory</div>
+                </div>
+                <div class="tool-tags">
+                    <span class="tool-tag">Wiegand</span>
+                    <span class="tool-tag">OSDP</span>
+                    <span class="tool-tag">Anti-passback</span>
+                    <span class="tool-tag">Anti-tailgating</span>
+                </div>
+            </div>
+
+            <!-- ОПС -->
+            <div class="glass tool-card">
+                <div class="tool-header">
+                    <div class="tool-ico">🚨</div>
+                    <h4>ОПС / Охранная сигнализация</h4>
+                </div>
+                <p class="tool-desc">Охранно-пожарные системы и извещатели</p>
+                <div class="tool-specs">
+                    <div class="spec"><span class="spec-label">Панели:</span> Болид Соната, Ajax Hub 2, Vizit Sigma</div>
+                    <div class="spec"><span class="spec-label">Извещатели:</span> Движения (PIR), разбития стекла, открытия дверей, лазерные</div>
+                    <div class="spec"><span class="spec-label">Оповещение:</span> Сирены, SMS, push, звонок, пульт ГОМ</div>
+                    <div class="spec"><span class="spec-label">Протоколы:</span> Contact ID, SIA, GSM/LTE</div>
+                    <div class="spec"><span class="spec-label">Резерв:</span> Аккумулятор 24ч, backup SIM</div>
+                </div>
+                <div class="tool-tags">
+                    <span class="tool-tag">IP</span>
+                    <span class="tool-tag">GSM</span>
+                    <span class="tool-tag">LOBBY</span>
+                    <span class="tool-tag">24/7</span>
+                </div>
+            </div>
+
+            <!-- Пожарная -->
+            <div class="glass tool-card">
+                <div class="tool-header">
+                    <div class="tool-ico">🔥</div>
+                    <h4>Пожарная безопасность</h4>
+                </div>
+                <p class="tool-desc">Системы пожарной сигнализации и тушения</p>
+                <div class="tool-specs">
+                    <div class="spec"><span class="spec-label">ППКП:</span> Болид Сигнал-20, Резерв, Стรม-32</div>
+                    <div class="spec"><span class="spec-label">Извещатели:</span> Дымовые, тепловые, газовые, пламени, ручные</div>
+                    <div class="spec"><span class="spec-label">Системы тушения:</span> Аэрозольные, газовые (FM-200), порошковые</div>
+                    <div class="spec"><span class="spec-label">Оповещение:</span> Громкоговорители, световые табло, аварийный свет</div>
+                    <div class="spec"><span class="spec-label">Нормы:</span> НПБ 110-03, СП 5.13130.2009</div>
+                </div>
+                <div class="tool-tags">
+                    <span class="tool-tag">Адресная</span>
+                    <span class="tool-tag">Пороговая</span>
+                    <span class="tool-tag">Аналоговая</span>
+                    <span class="tool-tag">Интегр.</span>
+                </div>
+            </div>
+
+            <!-- Сети и серверы -->
+            <div class="glass tool-card">
+                <div class="tool-header">
+                    <div class="tool-ico">🖥️</div>
+                    <h4>Сетевая инфраструктура</h4>
+                </div>
+                <p class="tool-desc">Серверы, коммутаторы и сетевое оборудование</p>
+                <div class="tool-specs">
+                    <div class="spec"><span class="spec-label">Серверы:</span> Dell PowerEdge, HPE ProLiant, NVR (до 256 камер)</div>
+                    <div class="spec"><span class="spec-label">Коммутаторы:</span> Cisco Catalyst, MikroTik, TP-Link Omada (PoE++)</div>
+                    <div class="spec"><span class="spec-label">Хранение:</span> RAID 5/6, NAS Synology, облако (Azure/AWS)</div>
+                    <div class="spec"><span class="spec-label">ОС:</span> Windows Server 2022, Ubuntu Server, Debian</div>
+                    <div class="spec"><span class="spec-label">Мониторинг:</span> Zabbix, PRTG, Grafana + Prometheus</div>
+                </div>
+                <div class="tool-tags">
+                    <span class="tool-tag">VLAN</span>
+                    <span class="tool-tag">VPN</span>
+                    <span class="tool-tag">PoE</span>
+                    <span class="tool-tag">802.1X</span>
+                </div>
+            </div>
+
+            <!-- Биометрия и контроль -->
+            <div class="glass tool-card">
+                <div class="tool-header">
+                    <div class="tool-ico">👁️</div>
+                    <h4>Биометрия и периметр</h4>
+                </div>
+                <p class="tool-desc">Системы биометрической идентификации и защиты периметра</p>
+                <div class="tool-specs">
+                    <div class="spec"><span class="spec-label">Биометрия:</span> Распознавание лиц, радужки, вен пальцев</div>
+                    <div class="spec"><span class="spec-label">Периметр:</span> Инфракрасные барьеры, микроволновые, лазерные</div>
+                    <div class="spec"><span class="spec-label">Контроль транспорта:</span> Шлагбаумы, ANPR, штатные парковки</div>
+                    <div class="spec"><span class="spec-label">Интеллектуальные замки:</span> Samsung SHP, Yale, August (WiFi/BLE)</div>
+                    <div class="spec"><span class="spec-label">Защита данных:</span> Шифрование AES-256, 2FA, ролевая модель доступа</div>
+                </div>
+                <div class="tool-tags">
+                    <span class="tool-tag">GDPR</span>
+                    <span class="tool-tag">AES-256</span>
+                    <span class="tool-tag">PKI</span>
+                    <span class="tool-tag">Zero Trust</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. ТЕСТ -->
 <section id="quiz">
     <div class="container">
         <div class="fi">
